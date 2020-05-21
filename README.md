@@ -10,12 +10,11 @@ Time–Frequency Distributions and Machine Learning'
 
 ---
 
-[Requirements](#requirements) | [Use](#use) | [Quantitative
-features](#quantitative-features) | [Files](#files) | [Test computer
+[Requirements](#requirements) | [Use](#use) | [Files](#files) | [Test computer
 setup](#test-computer-setup) | [Licence](#licence) | [References](#references) |
 [Contact](#contact)
 
-## Requirements:
+## Requirements
 Python 3.7 or newer with the following packages installed
 | Package       | Version installed  |
 | ------------- |:------------------:|
