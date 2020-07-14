@@ -12,7 +12,7 @@ Time–Frequency Distributions and Machine Learning'
 
 [Requirements](#requirements) | [Use](#use) | [Files](#files) | [Test computer
 setup](#test-computer-setup) | [Licence](#licence) | [References](#references) |
-[Contact](#contact)
+[Acknowledgements](#acknowledgements) | [Contact](#contact)
 
 ## Requirements
 Python 3.7 or newer with the following packages installed
@@ -130,6 +130,19 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 ## References
 
+
+1. BM Murphy, RM Goulding and JM O’Toole (2017). 'Detection of Transient Bursts in the EEG of Preterm Infants using
+Time–Frequency Distributions and Machine Learning. In 2020 42nd Annual International Conference of the IEEE Engineering 
+in Medicine and Biology Society (EMBC).
+
+
+2. JM O’Toole and GB Boylan (2017). NEURAL: quantitative features for newborn EEG using
+Matlab. ArXiv e-prints, arXiv:[1704.05694](https://arxiv.org/abs/1704.05694).
+
+
+## Acknowledgements
+
+Thanks to Christopher Lundy for testing this code.
 
 
 ## Contact
