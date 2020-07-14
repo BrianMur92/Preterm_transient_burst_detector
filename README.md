@@ -22,12 +22,15 @@ Python 3.7 or newer with the following packages installed
 | numpy         | 1.17.1             |
 | xgboost       | 0.90               |
 | mne           | 0.18.2             |
+| scikit-learn  | 0.21.3             |
 | scipy         | 1.3.1              |
+
 
 
 The current version of the code requires MATLAB to compute the time-frequency distributions. The [memeff_TFDs](https://github.com/otoolej/memeff_TFDs)
 MATLAB package is what is used to generate the time-frequency distributions.
-Please download this package change the variable `path_to_TFD_package` to the location of the package.
+Please download this package change the variable `path_to_TFD_package`, an input variable to use_model.main(), 
+to the location of the package.
 
 To use MATLAB commands in python the following link provides details on how to install the MATLAB engine [LINK](https://www.mathworks.com/help/matlab/matlab_external/install-the-matlab-engine-for-python.html).
 
@@ -46,7 +49,7 @@ Then the following will load the main functions:
 
 Example when using the demo_data.edf file
 ```
-eeg_ts_data, tfd_data_df, y_preds_probs = main(path_to_TFD_package='path_to_memeff_TFDs_package')
+eeg_ts_data, tfd_data_df, y_preds_probs = use_model.main(path_to_TFD_package='path_to_memeff_TFDs_package')
 ```
 **Note**: To use a different edf file call function like so
 ```
@@ -56,8 +59,9 @@ eeg_ts_data, tfd_data_df, y_preds_probs = use_model.main(file_name='Own_edf_file
 
 Example when the eeg data is saved in a csv file (assuming it is bi-polar order, has been filtered and downsampled to 64 Hz)
 ```
+import pandas as pd
 eeg_data = pd.read_csv('demo_data.csv')
-eeg_df, tfd_data_df, y_preds_probs = use_model.main(eeg_data=eeg_data, Fs=64, file_name='File_1', channel='F3–C3', path_to_TFD_package='path_to_memeff_TFDs_package')
+eeg_df, tfd_data_df, y_preds_probs = use_model.main(eeg_data=eeg_data, Fs=64, file_name='File_1', channel='F3_C3', path_to_TFD_package='path_to_memeff_TFDs_package')
 ```
 **Note**: A user can load the data whatever way they like as long as it is passed into the main function as a DataFrame, 
 where the column names are the bi-polar channel names. If the data is not sampled at 64 Hz please filter and downsample 
@@ -73,12 +77,13 @@ The `use_model` python file (.py file) have a description and an example in the 
 header, type `help(use_model.main)` in the console after importing (`import use_model`), to get information about the
 main function.  Directory structure is as follows: 
 ```
-├── CHANGELOG.md          # changelog file
-├── demo_data.csv         # example csv data
-├── demo_data.edf         # example edf data
-├── LICENSE.md            # license file 
-├── README.md             # readme file describing project
-└── use_model.py          # File showing how to use the model
+├── CHANGELOG.md                              # Changelog file
+├── demo_data.csv                             # Example csv data
+├── demo_data.edf                             # example edf data
+├── LICENSE.md                                # License file 
+├── README.md                                 # README file describing project
+├── tfd_feature_set_dwin_35_lwin_171.model    # Fully trained model
+└── use_model.py                              # File showing how to use the model
 ```
 
 **NOTE**: demo_data.edf was created using [NEURAL_py_EEG_feature_set](https://github.com/BrianMur92/NEURAL_py_EEG_feature_set).

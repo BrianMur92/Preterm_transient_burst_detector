@@ -497,7 +497,7 @@ def main(eeg_data=None, Fs=None, file_name=None, channel='F4_C4', path_to_TFD_pa
         raise ValueError('This program will not work without the MATLAB memeff_TFDs package')
 
     # If no eeg_data (DataFrame) is passed in it will load the demo data
-    if not eeg_data:
+    if not isinstance(eeg_data, pd.DataFrame):
         # Load sample edf file - created with https://github.com/BrianMur92/NEURAL_py_EEG_feature_set
         if not file_name:
             file_name = 'demo_data.edf'
@@ -538,4 +538,3 @@ def main(eeg_data=None, Fs=None, file_name=None, channel='F4_C4', path_to_TFD_pa
     y_preds_probs = trained_model.predict_proba(x)[:, 1]  # Probability of epochs being bursts
 
     return eeg_data, tfd_data_df, y_preds_probs
-
